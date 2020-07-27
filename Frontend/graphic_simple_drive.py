@@ -2,6 +2,8 @@ from tkinter import *
 from time import *
 from MotorsWork import drive
 from MotorsWork import turn
+# from Main import Main
+from State_driving import State
 
 driv = drive.Drive()
 turns = turn.Turn()
@@ -13,6 +15,8 @@ class SimpleControl:
     """
 
     def __init__(self):
+        self.state = State.SIMPLEDRIVE
+
         self.simple_window = Tk()
         self.simple_window.geometry("250x100")
         self.two_buttons = Canvas(self.simple_window)
@@ -36,6 +40,8 @@ class SimpleControl:
         self.stop = Button(self.two_buttons, text="stops", command=lambda: self.block_the_button(0))
         self.stop.grid(row=1, column=1)
 
+        self.simple_window.mainloop()
+
     def block_the_button(self, button):
         if int(button) == 1:
             self.drive_forward.config(state=DISABLED)
@@ -52,18 +58,20 @@ class SimpleControl:
             self.turn_right.config(state=NORMAL)
 
         if int(button) == 3:
-            self.turn_left.config(state=DISABLED)
+            pass
+            # self.turn_left.config(state=DISABLED)
 
-            self.drive_forward.config(state=NORMAL)
-            self.drive_back.config(state=NORMAL)
-            self.turn_right.config(state=NORMAL)
+            # self.drive_forward.config(state=NORMAL)
+            # self.drive_back.config(state=NORMAL)
+            # self.turn_right.config(state=NORMAL)
 
         if int(button) == 4:
-            self.turn_right.config(state=DISABLED)
+            pass
+            # self.turn_right.config(state=DISABLED)
 
-            self.drive_forward.config(state=NORMAL)
-            self.drive_back.config(state=NORMAL)
-            self.turn_left.config(state=NORMAL)
+            # self.drive_forward.config(state=NORMAL)
+            # self.drive_back.config(state=NORMAL)
+            # self.turn_left.config(state=NORMAL)
 
         if int(button) == 0:
             self.drive_forward.config(state=NORMAL)
@@ -76,6 +84,3 @@ class SimpleControl:
 
 
 
-s = SimpleControl()
-
-mainloop()

@@ -5,12 +5,15 @@ import sys
 # sys.path.insert(0, '/home/nikita/GoogleDrive/AutoCar/Tests2')
 from Tests.Tests2 import classes
 
-f= classes.Div()
-print(f.divi(2,4))
+# f = classes.Div()
+while True:
+    print('hier')
 
+# f.test_multi()
 
+# print(f.divi(2, 4))
 
-F = class2.Functions()
+# F = class2.Functions()
 
-print(F.Multiplication(10,3))
-print(sin(20))
+# print(F.Multiplication(10, 3))
+# print(sin(20))'''
