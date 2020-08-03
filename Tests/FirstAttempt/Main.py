@@ -24,7 +24,7 @@ class Main:
         print(self.state)
         while self.state == State.SIMPLEDRIVE:
             print('while Schlaufe')
-            state = str(simple_drive.drive_forward['state'])
+            state = str(simple_drive.turn_left['state'])
             if state == 'disabled':
                 driv.Forward()
 
